@@ -18,7 +18,6 @@ app = FastAPI(title="Apex Power Demand Forecasting API")
 # Mount static folder
 app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
 
-# ====================== LOAD MODEL & FEATURES ======================
 try:
     model_path = os.path.join(BASE_DIR, "Model", "xgb_power_forecast_model.pkl")
     model = joblib.load(model_path)
@@ -26,29 +25,26 @@ try:
     feature_path = os.path.join(BASE_DIR, "Model", "feature_names.pkl")
     feature_names = joblib.load(feature_path)
     
-    print("✅ Model loaded successfully!")
+    print("Model loaded successfully!")
     print(f"   Model: power_demand_xgboost.pkl")
     print(f"   Features: {len(feature_names)} loaded")
 
 except Exception as e:
-    print(f"❌ Model loading failed: {e}")
+    print(f" Model loading failed: {e}")
     model = None
     feature_names = []
 
-# ====================== REQUEST MODEL ======================
 class ForecastRequest(BaseModel):
-    date: str   # YYYY-MM-DD
+    date: str  
 
-# ====================== ROOT ======================
 @app.get("/")
 async def root():
     return HTMLResponse("""
-    <h1>🔋 Apex Power & Utilities - Demand Forecasting API</h1>
+    <h1> Apex Power & Utilities - Demand Forecasting API</h1>
     <p>Frontend: <a href="/static/index.html">/static/index.html</a></p>
     <p>API Docs: <a href="/docs">/docs</a></p>
     """)
 
-# ====================== FORECAST ENDPOINT ======================
 @app.post("/forecast")
 async def get_forecast(request: ForecastRequest):
     if model is None:
@@ -105,7 +101,7 @@ async def get_forecast(request: ForecastRequest):
             df_future['WindSpeed'] = hourly['WindSpeed']
             df_future['CloudCover'] = hourly['CloudCover']
 
-            print("✅ Weather data fetched successfully")
+            print(" Weather data fetched successfully")
 
         except Exception as e:
             print(f"Weather API failed: {e}. Using fallback values.")
