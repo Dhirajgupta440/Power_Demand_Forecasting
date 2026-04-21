@@ -30,7 +30,7 @@ The system consists of:
 ```
 ##  Model Performance
 
-### 🔹 Regression Metrics (Load Forecasting)
+###  Regression Metrics (Load Forecasting)
 
 The regression model demonstrates high accuracy in predicting power demand:
 
@@ -41,22 +41,22 @@ The regression model demonstrates high accuracy in predicting power demand:
 
 ---
 
-### 🔹 Classification Metrics (High Load vs Normal Load)
+###  Classification Metrics (High Load vs Normal Load)
 
 A classification layer is used to identify high load conditions based on a threshold.
 
- **Accuracy:** 0.9948
+* **Accuracy:** 0.9948
 
- **Precision:** 0.9733
+* **Precision:** 0.9733
 
- **Recall:** 0.9970
+* **Recall:** 0.9970
 
- **F1 Score:** 0.9850
+* **F1 Score:** 0.9850
 
 
 ---
 
-### Summary
+### ✅ Summary
 
 * The regression model achieves **extremely low error rates** and near-perfect variance explanation.
 * The classification model maintains **high precision and recall**, ensuring reliable detection of high-load scenarios.
