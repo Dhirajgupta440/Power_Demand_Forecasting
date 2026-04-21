@@ -56,7 +56,7 @@ A classification layer is used to identify high load conditions based on a thres
 
 ---
 
-### ✅ Summary
+### Summary
 
 * The regression model achieves **extremely low error rates** and near-perfect variance explanation.
 * The classification model maintains **high precision and recall**, ensuring reliable detection of high-load scenarios.
