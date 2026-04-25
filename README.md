@@ -1,7 +1,7 @@
 # Apex Power Demand Forecasting System
 
 ## Overview
-This project is a full-stack, simplified power demand forecasting system built for Apex Power & Utilities. It predicts power load in 10-minute blocks for the next 24 hours in Dhanbad, Jharkhand.
+This project is a **Machine Learning & Full Stack**, simplified power demand forecasting system built for Apex Power & Utilities. It predicts power load in 10-minute blocks for the next 24 hours in Dhanbad, Jharkhand.
 
 The system consists of:
 1. **Analysis & Modeling**: A documented Jupyter Notebook containing Exploratory Data Analysis (EDA), Data Cleaning, Feature Engineering, Model Training, and validation using XGBoost.
